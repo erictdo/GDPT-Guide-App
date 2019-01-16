@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  SafeAreaView,
+  ScrollView
+} from "react-native";
 import {
   createAppContainer,
   createDrawerNavigator,
@@ -7,6 +14,7 @@ import {
 } from "react-navigation";
 import HomeScreen from "./screens/HomeScreen";
 import AboutScreen from "./screens/AboutScreen";
+import PrayerScreen from "./screens/PrayerScreen";
 
 export default class App extends React.Component {
   render() {
@@ -16,6 +24,19 @@ export default class App extends React.Component {
 
 const CustomDrawerComponent = props => (
   <SafeAreaView style={{ flex: 1 }}>
+    <View
+      style={{
+        height: 150,
+        backgroundColor: "white",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <Image
+        source={require("./assets/hoasen.png")}
+        style={{ height: 120, width: 120, borderRadius: 100 }}
+      />
+    </View>
     <ScrollView>
       <DrawerItems {...props} />
     </ScrollView>
@@ -25,13 +46,13 @@ const CustomDrawerComponent = props => (
 const AppDrawerNavigator = createDrawerNavigator(
   {
     Home: HomeScreen,
+    Prayer: PrayerScreen,
     About: AboutScreen
   },
   {
-    initialRouteName: "Home"
-  },
-  {
-    contentComponent: CustomDrawerComponent
+    initialRouteName: "Home",
+    contentComponent: CustomDrawerComponent,
+    drawerBackgroundColor: "green"
   }
 );
 
@@ -42,5 +63,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center"
+  },
+  navHeader: {
+    backgroundColor: "rgba(0,0,0, 0.2)"
   }
 });

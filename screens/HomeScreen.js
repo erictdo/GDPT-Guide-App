@@ -19,7 +19,7 @@ export default class HomeScreen extends React.Component {
     return (
       <ImageBackground
         source={require("../assets/bg.jpg")}
-        style={styles.startContainer}
+        style={styles.container}
       >
         <View style={styles.overlayContainer}>
           {this.state.fontLoaded ? (
@@ -33,7 +33,7 @@ export default class HomeScreen extends React.Component {
                   Nam is a Buddhist youth organization that aims to inspirit its
                   members with Buddhist teachings and ethics. This app allows
                   quick access to information regarding G.D.P.T., which includes
-                  Buddhism, songs, morse code, and more!
+                  Buddhism, songs, puzzle letters, and more
                 </Text>
               </View>
             </View>
@@ -45,7 +45,7 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  startContainer: {
+  container: {
     flex: 1,
     width: "100%",
     height: "100%"
@@ -53,27 +53,6 @@ const styles = StyleSheet.create({
   overlayContainer: {
     flex: 1,
     backgroundColor: "rgba(120,150,120, .5)"
-  },
-  homeTextContainer: {
-    transform: [{ translateY: 200 }],
-    alignItems: "center"
-  },
-  homeText: {
-    color: "#fff",
-    textAlign: "center",
-    fontFamily: "montserrat-thin",
-    fontSize: 18,
-    borderColor: "#fff",
-    borderWidth: 2,
-    padding: 20,
-    paddingLeft: 30,
-    paddingRight: 30,
-    backgroundColor: "rgba(0,0,0, .3)",
-    width: "80%"
-  },
-  container: {
-    flex: 1,
-    alignItems: "center"
   },
   titleContainer: {
     transform: [{ translateY: 100 }],
@@ -88,6 +67,23 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 30,
     backgroundColor: "rgba(0,0,0, .3)",
+    width: "100%"
+  },
+  homeTextContainer: {
+    transform: [{ translateY: 220 }],
+    alignItems: "center"
+  },
+  homeText: {
+    color: "#fff",
+    textAlign: "center",
+    fontFamily: "montserrat-thin",
+    fontSize: 20,
+    borderColor: "#fff",
+    borderWidth: 2,
+    padding: 20,
+    paddingLeft: 30,
+    paddingRight: 30,
+    backgroundColor: "rgba(0,0,0, .5)",
     width: "80%"
   }
 });
