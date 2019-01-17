@@ -4,14 +4,15 @@ import {
   View,
   Text,
   Image,
-  SafeAreaView,
-  ScrollView
+  ScrollView,
+  SafeAreaView
 } from "react-native";
 import {
   createAppContainer,
   createDrawerNavigator,
   DrawerItems
 } from "react-navigation";
+import GlobalStyles from "./GlobalStyles";
 import HomeScreen from "./screens/HomeScreen";
 import AboutScreen from "./screens/AboutScreen";
 import PrayerScreen from "./screens/PrayerScreen";
@@ -23,18 +24,22 @@ export default class App extends React.Component {
 }
 
 const CustomDrawerComponent = props => (
-  <SafeAreaView style={{ flex: 1 }}>
+  <SafeAreaView style={GlobalStyles.droidSafeArea}>
     <View
       style={{
         height: 150,
-        backgroundColor: "white",
+        backgroundColor: "rbg(0, 168, 90)",
         alignItems: "center",
         justifyContent: "center"
       }}
     >
       <Image
         source={require("./assets/hoasen.png")}
-        style={{ height: 120, width: 120, borderRadius: 100 }}
+        style={{
+          height: 120,
+          width: 120,
+          borderRadius: 100
+        }}
       />
     </View>
     <ScrollView>
@@ -52,7 +57,7 @@ const AppDrawerNavigator = createDrawerNavigator(
   {
     initialRouteName: "Home",
     contentComponent: CustomDrawerComponent,
-    drawerBackgroundColor: "green"
+    drawerBackgroundColor: "rgb(220, 255, 220)"
   }
 );
 

@@ -1,6 +1,16 @@
 import React from "react";
-import { StyleSheet, ImageBackground, View, Text } from "react-native";
+import {
+  StyleSheet,
+  ImageBackground,
+  SafeAreaView,
+  Text,
+  Image,
+  View,
+  TouchableHighlight
+} from "react-native";
+import { Container, Content, Header, Left, Right, Body } from "native-base";
 import { Font } from "expo";
+import GlobalStyles from "../GlobalStyles";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -15,30 +25,58 @@ export default class HomeScreen extends React.Component {
     });
     this.setState({ fontLoaded: true });
   }
+
   render() {
     return (
       <ImageBackground
         source={require("../assets/bg.jpg")}
-        style={styles.container}
+        style={[styles.container, GlobalStyles.droidSafeArea]}
       >
-        <View style={styles.overlayContainer}>
+        <SafeAreaView style={styles.overlayContainer}>
+          <Header
+            style={{
+              backgroundColor: "rgba(0,110,50, .5)",
+              borderColor: "rgba(0,0,0, 1)",
+              borderWidth: 5
+            }}
+          >
+            <Left>
+              <TouchableHighlight
+                onPress={() => this.props.navigation.openDrawer()}
+                style={{
+                  borderColor: "rgba(0,0,0, .2)",
+                  borderWidth: 5,
+                  transform: [{ scale: 0.25 }]
+                }}
+              >
+                <Image
+                  source={require("../assets/menu-icon.png")}
+                  style={{
+                    transform: [{ scale: 0.7 }]
+                  }}
+                />
+              </TouchableHighlight>
+            </Left>
+            <Body />
+            <Right />
+          </Header>
           {this.state.fontLoaded ? (
-            <View>
-              <View style={styles.titleContainer}>
+            <SafeAreaView>
+              <SafeAreaView style={styles.titleContainer}>
                 <Text style={styles.title}>G.D.P.T. Information Guide</Text>
-              </View>
-              <View style={styles.homeTextContainer}>
+              </SafeAreaView>
+              <SafeAreaView style={styles.homeTextContainer}>
                 <Text style={styles.homeText}>
-                  Welcome to the G.D.P.T. Info Guide App! Gia Đình Phật Tử Việt
+                  Welcome to the G.Đ.P.T. Info Guide App! Gia Đình Phật Tử Việt
                   Nam is a Buddhist youth organization that aims to inspirit its
                   members with Buddhist teachings and ethics. This app allows
-                  quick access to information regarding G.D.P.T., which includes
-                  Buddhism, songs, puzzle letters, and more
+                  quick access to information regarding G.Đ.P.T., which includes
+                  Buddhism, songs, puzzle letters, and more!
                 </Text>
-              </View>
-            </View>
+              </SafeAreaView>
+            </SafeAreaView>
           ) : null}
-        </View>
+        </SafeAreaView>
       </ImageBackground>
     );
   }
@@ -47,6 +85,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "rbg(0, 168, 90)",
     width: "100%",
     height: "100%"
   },
@@ -55,7 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(120,150,120, .5)"
   },
   titleContainer: {
-    transform: [{ translateY: 100 }],
+    transform: [{ translateY: 50 }],
     alignItems: "center"
   },
   title: {
@@ -78,8 +117,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "montserrat-thin",
     fontSize: 20,
-    borderColor: "#fff",
-    borderWidth: 2,
+    borderColor: "rgba(0,0,0, .2)",
+    borderWidth: 5,
     padding: 20,
     paddingLeft: 30,
     paddingRight: 30,
