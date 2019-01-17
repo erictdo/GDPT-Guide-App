@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, SafeAreaView, View } from "react-native";
 import {
   Container,
   Content,
@@ -9,7 +9,8 @@ import {
   Body,
   Icon
 } from "native-base";
-import GlobalStyles from "../GlobalStyles";
+import GlobalStyles from "../components/GlobalStyles";
+import MenuButton from "../components/MenuButton";
 
 export default class PrayerScreen extends React.Component {
   static navigationOptions = {
@@ -17,25 +18,12 @@ export default class PrayerScreen extends React.Component {
   };
   render() {
     return (
-      <Container style={GlobalStyles.droidSafeArea}>
-        <Header
-          style={{
-            backgroundColor: "rgba(0,110,50, .5)"
-          }}
-        >
-          <Left>
-            <Icon
-              name="menu"
-              onPress={() => this.props.navigation.openDrawer()}
-            />
-          </Left>
-          <Body />
-          <Right />
-        </Header>
-        <Content style={styles.contentContainer}>
+      <SafeAreaView style={GlobalStyles.droidSafeArea}>
+        <MenuButton navigation={this.props.navigation} />
+        <SafeAreaView style={styles.contentContainer}>
           <Text>Prayers</Text>
-        </Content>
-      </Container>
+        </SafeAreaView>
+      </SafeAreaView>
     );
   }
 }

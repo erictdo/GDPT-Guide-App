@@ -8,9 +8,9 @@ import {
   View,
   TouchableHighlight
 } from "react-native";
-import { Container, Content, Header, Left, Right, Body } from "native-base";
 import { Font } from "expo";
-import GlobalStyles from "../GlobalStyles";
+import GlobalStyles from "../components/GlobalStyles";
+import MenuButton from "../components/MenuButton";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -30,50 +30,20 @@ export default class HomeScreen extends React.Component {
     return (
       <ImageBackground
         source={require("../assets/bg.jpg")}
-        style={[styles.container, GlobalStyles.droidSafeArea]}
+        style={styles.backgroundImage}
       >
         <SafeAreaView style={styles.overlayContainer}>
-          <Header
-            style={{
-              backgroundColor: "rgba(0,110,50, .5)",
-              borderColor: "rgba(0,0,0, 1)",
-              borderWidth: 5
-            }}
-          >
-            <Left>
-              <TouchableHighlight
-                onPress={() => this.props.navigation.openDrawer()}
-                style={{
-                  borderColor: "rgba(0,0,0, .2)",
-                  borderWidth: 5,
-                  transform: [{ scale: 0.25 }]
-                }}
-              >
-                <Image
-                  source={require("../assets/menu-icon.png")}
-                  style={{
-                    transform: [{ scale: 0.7 }]
-                  }}
-                />
-              </TouchableHighlight>
-            </Left>
-            <Body />
-            <Right />
-          </Header>
+          <MenuButton navigation={this.props.navigation} />
           {this.state.fontLoaded ? (
-            <SafeAreaView>
-              <SafeAreaView style={styles.titleContainer}>
-                <Text style={styles.title}>G.D.P.T. Information Guide</Text>
-              </SafeAreaView>
-              <SafeAreaView style={styles.homeTextContainer}>
-                <Text style={styles.homeText}>
-                  Welcome to the G.Đ.P.T. Info Guide App! Gia Đình Phật Tử Việt
-                  Nam is a Buddhist youth organization that aims to inspirit its
-                  members with Buddhist teachings and ethics. This app allows
-                  quick access to information regarding G.Đ.P.T., which includes
-                  Buddhism, songs, puzzle letters, and more!
-                </Text>
-              </SafeAreaView>
+            <SafeAreaView style={styles.contentContainer}>
+              <Text style={styles.title}>G.D.P.T. Information Guide</Text>
+              <Text style={styles.homeText}>
+                Welcome to the G.Đ.P.T. Info Guide App! Gia Đình Phật Tử Việt
+                Nam is a Buddhist youth organization that aims to inspirit its
+                members with Buddhist teachings and ethics. This app allows
+                quick access to information regarding G.Đ.P.T., which includes
+                Buddhism, songs, puzzle letters, and more!
+              </Text>
             </SafeAreaView>
           ) : null}
         </SafeAreaView>
@@ -83,9 +53,8 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  backgroundImage: {
     flex: 1,
-    backgroundColor: "rbg(0, 168, 90)",
     width: "100%",
     height: "100%"
   },
@@ -93,32 +62,29 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(120,150,120, .5)"
   },
-  titleContainer: {
-    transform: [{ translateY: 50 }],
+  contentContainer: {
     alignItems: "center"
   },
   title: {
+    position: "absolute",
+    transform: [{ translateY: 87 }],
     color: "#fff",
     textAlign: "center",
     fontFamily: "montserrat-thin",
     fontSize: 32,
     padding: 20,
-    paddingLeft: 30,
-    paddingRight: 30,
     backgroundColor: "rgba(0,0,0, .3)",
     width: "100%"
   },
-  homeTextContainer: {
-    transform: [{ translateY: 220 }],
-    alignItems: "center"
-  },
   homeText: {
+    position: "absolute",
+    transform: [{ translateY: 250 }],
     color: "#fff",
     textAlign: "center",
     fontFamily: "montserrat-thin",
     fontSize: 20,
     borderColor: "rgba(0,0,0, .2)",
-    borderWidth: 5,
+    borderWidth: 3,
     padding: 20,
     paddingLeft: 30,
     paddingRight: 30,
