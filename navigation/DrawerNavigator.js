@@ -18,9 +18,10 @@ import GlobalStyles from "../components/GlobalStyles";
 import HomeScreen from "../screens/HomeScreen";
 import PrayerScreen from "../screens/PrayerScreen";
 import AboutScreen from "../screens/AboutScreen";
+import ToolsScreen from "../screens/ToolsScreen";
 
 const CustomDrawerComponent = props => (
-  <SafeAreaView style={GlobalStyles.droidSafeArea}>
+  <SafeAreaView>
     <View
       style={{
         height: 150,
@@ -32,9 +33,9 @@ const CustomDrawerComponent = props => (
       <Image
         source={require("../assets/hoasen.png")}
         style={{
-          height: 120,
-          width: 120,
-          borderRadius: 100
+          height: 130,
+          width: 130,
+          borderRadius: 150
         }}
       />
     </View>
@@ -48,12 +49,23 @@ const DrawerNavigator = createDrawerNavigator(
   {
     Home: HomeScreen,
     Prayer: PrayerScreen,
-    About: AboutScreen
+    About: AboutScreen,
+    Tools: ToolsScreen
   },
   {
     initialRouteName: "Home",
     contentComponent: CustomDrawerComponent,
-    drawerBackgroundColor: "rgb(230, 255, 230)"
+    drawerBackgroundColor: "rgb(0, 136, 77)",
+    contentOptions: {
+      activeTintColor: "rgb(255,105,180)",
+      inactiveTintColor: "rgb(255,255,255)",
+      itemsContainerStyle: {
+        marginVertical: 0
+      },
+      iconContainerStyle: {
+        opacity: 1
+      }
+    }
   }
 );
 

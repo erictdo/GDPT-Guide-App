@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, StatusBar } from "react-native";
+import { StyleSheet, StatusBar, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default class MenuButton extends React.Component {

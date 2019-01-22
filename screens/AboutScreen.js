@@ -9,23 +9,27 @@ import {
   Body,
   Icon
 } from "native-base";
+import Header from "../components/Header";
 import GlobalStyles from "../components/GlobalStyles";
 import MenuButton from "../components/MenuButton";
 
 export default class AboutScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: "About "
+    drawerLabel: "About ",
+    title: "About"
   };
   render() {
     return (
-      <SafeAreaView style={GlobalStyles.droidSafeArea}>
+      <SafeAreaView>
+        <View style={GlobalStyles.statusBar} />
+        <Header style={{ backgroundColor: "rgb(0, 136, 77)" }} />
         <MenuButton navigation={this.props.navigation} />
-        <SafeAreaView style={styles.contentContainer}>
+        <View style={styles.contentContainer}>
           <Text>
             This App was made by Eric Do from G.D.P.T. Hue Quang in Westminster,
             California.
           </Text>
-        </SafeAreaView>
+        </View>
       </SafeAreaView>
     );
   }

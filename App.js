@@ -1,25 +1,14 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  ScrollView,
-  SafeAreaView
-} from "react-native";
-import {
-  createAppContainer,
-  createDrawerNavigator,
-  DrawerItems
-} from "react-navigation";
+import { StyleSheet, SafeAreaView } from "react-native";
+
 import DrawerNavigator from "./navigation/DrawerNavigator";
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <DrawerNavigator />
-      </View>
+      </SafeAreaView>
     );
   }
 }
