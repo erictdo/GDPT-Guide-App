@@ -6,7 +6,7 @@ export default class Header extends React.Component {
     return (
       <SafeAreaView style={styles.headerStyle}>
         <View style={styles.headerTitleContainer}>
-          <Text style={styles.headerTitle}>Title: {this.props.name}</Text>
+          <Text style={styles.headerTitle}>{this.props.name}</Text>
         </View>
       </SafeAreaView>
     );
@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: "#fff",
-    fontSize: 24
+    fontSize: 24,
+    transform: [{ translateX: 80 }],
+    fontFamily: "montserrat-thin",
+    fontWeight: "400"
   }
 });

@@ -1,14 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import {
-  Container,
-  Content,
-  Header,
-  Left,
-  Right,
-  Body,
-  Icon
-} from "native-base";
+import { Ionicons } from "@expo/vector-icons";
 import Header from "../components/Header";
 import GlobalStyles from "../components/GlobalStyles";
 import MenuButton from "../components/MenuButton";
@@ -16,7 +8,19 @@ import MenuButton from "../components/MenuButton";
 export default class AboutScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: "About ",
-    title: "About"
+    drawerIcon: ({ tintColor }) => (
+      <Ionicons
+        name="md-information-circle-outline"
+        style={{
+          fontSize: 24,
+          color: tintColor,
+          textShadowOffset: {
+            width: 1,
+            height: 1
+          }
+        }}
+      />
+    )
   };
   render() {
     return (
@@ -26,7 +30,7 @@ export default class AboutScreen extends React.Component {
         <MenuButton navigation={this.props.navigation} />
         <View style={styles.contentContainer}>
           <Text>
-            This App was made by Eric Do from G.D.P.T. Hue Quang in Westminster,
+            This App was made by Eric Do from GĐPT Hue Quang in Westminster,
             California.
           </Text>
         </View>

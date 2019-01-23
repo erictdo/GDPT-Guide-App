@@ -7,28 +7,28 @@ import {
   Text,
   ScrollView
 } from "react-native";
-import { Font, AppLoading } from "expo";
+import { Ionicons } from "@expo/vector-icons";
 import MenuButton from "../components/MenuButton";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: "Home ",
-    title: "Home"
+    drawerIcon: ({ tintColor }) => (
+      <Ionicons
+        name="md-home"
+        style={{
+          fontSize: 24,
+          color: tintColor,
+          textShadowOffset: {
+            width: 1,
+            height: 1
+          }
+        }}
+      />
+    )
   };
-  state = {
-    isReady: false
-  };
-  async componentDidMount() {
-    await Font.loadAsync({
-      "montserrat-thin": require("../assets/fonts/Montserrat-Thin.ttf")
-    });
-    this.setState({ isReady: true });
-  }
 
   render() {
-    if (!this.state.isReady) {
-      return <AppLoading />;
-    }
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         <ImageBackground

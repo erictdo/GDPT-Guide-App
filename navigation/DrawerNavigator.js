@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import {
-  Platform,
-  Dimensions,
   SafeAreaView,
   View,
   Image,
-  ScrollView
+  ScrollView,
+  Platform,
+  StatusBar
 } from "react-native";
 import {
   createAppContainer,
@@ -13,15 +13,17 @@ import {
   DrawerItems
 } from "react-navigation";
 
-import GlobalStyles from "../components/GlobalStyles";
-
 import HomeScreen from "../screens/HomeScreen";
 import PrayerScreen from "../screens/PrayerScreen";
 import AboutScreen from "../screens/AboutScreen";
 import ToolsScreen from "../screens/ToolsScreen";
 
 const CustomDrawerComponent = props => (
-  <SafeAreaView>
+  <SafeAreaView
+    style={{
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    }}
+  >
     <View
       style={{
         height: 150,
@@ -49,8 +51,8 @@ const DrawerNavigator = createDrawerNavigator(
   {
     Home: HomeScreen,
     Prayer: PrayerScreen,
-    About: AboutScreen,
-    Tools: ToolsScreen
+    Tools: ToolsScreen,
+    About: AboutScreen
   },
   {
     initialRouteName: "Home",
@@ -59,11 +61,13 @@ const DrawerNavigator = createDrawerNavigator(
     contentOptions: {
       activeTintColor: "rgb(255,105,180)",
       inactiveTintColor: "rgb(255,255,255)",
-      itemsContainerStyle: {
-        marginVertical: 0
-      },
-      iconContainerStyle: {
-        opacity: 1
+      labelStyle: {
+        fontWeight: "normal",
+        fontSize: 16,
+        textShadowOffset: {
+          width: 1,
+          height: 1
+        }
       }
     }
   }
