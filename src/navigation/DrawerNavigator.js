@@ -13,10 +13,10 @@ import {
   DrawerItems
 } from "react-navigation";
 
-import HomeScreen from "../screens/HomeScreen";
-import PrayerScreen from "../screens/PrayerScreen";
-import AboutScreen from "../screens/AboutScreen";
-import ToolsScreen from "../screens/ToolsScreen";
+import HomeScreen from "../screens/home/HomeScreen";
+import PrayerScreen from "../screens/prayer/PrayerScreen";
+import AboutScreen from "../screens/about/AboutScreen";
+import ToolsScreen from "../screens/tools/ToolsScreen";
 
 const CustomDrawerComponent = props => (
   <SafeAreaView

@@ -8,7 +8,7 @@ import {
   ScrollView
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import MenuButton from "../components/MenuButton";
+import MenuButton from "../../components/MenuButton";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -32,7 +32,7 @@ export default class HomeScreen extends React.Component {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         <ImageBackground
-          source={require("../assets/bg.jpg")}
+          source={require("../../assets/bg.jpg")}
           style={styles.backgroundImage}
         >
           <View style={styles.overlayContainer}>

@@ -1,16 +1,23 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import {
+  StatusBar,
+  SafeAreaView,
+  View,
+  StyleSheet,
+  Text,
+  ImageBackground
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Header from "../components/Header";
-import GlobalStyles from "../components/GlobalStyles";
-import MenuButton from "../components/MenuButton";
+import Header from "../../components/Header";
+import GlobalStyles from "../../components/GlobalStyles";
+import MenuButton from "../../components/MenuButton";
 
-export default class AboutScreen extends React.Component {
+export default class ToolsScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: "About ",
+    drawerLabel: "Tools ",
     drawerIcon: ({ tintColor }) => (
       <Ionicons
-        name="md-information-circle-outline"
+        name="md-hammer"
         style={{
           fontSize: 24,
           color: tintColor,
@@ -30,8 +37,8 @@ export default class AboutScreen extends React.Component {
         <MenuButton navigation={this.props.navigation} />
         <View style={styles.contentContainer}>
           <Text>
-            This App was made by Eric Do from GĐPT Hue Quang in Westminster,
-            California.
+            List of tools will go here. Includes morse code, semiphore, and
+            puzzle letter examples.
           </Text>
         </View>
       </SafeAreaView>
@@ -42,5 +49,9 @@ export default class AboutScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: "center"
   }
 });

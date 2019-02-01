@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { Font, AppLoading } from "expo";
 
-import DrawerNavigator from "./navigation/DrawerNavigator";
+import DrawerNavigator from "./src/navigation/DrawerNavigator";
 
 export default class App extends React.Component {
   state = {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
   };
   async componentDidMount() {
     await Font.loadAsync({
-      "montserrat-thin": require("./assets/fonts/Montserrat-Thin.ttf")
+      "montserrat-thin": require("./src/assets/fonts/Montserrat-Thin.ttf")
     });
     this.setState({ isReady: true });
   }
