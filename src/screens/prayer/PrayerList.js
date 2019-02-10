@@ -5,11 +5,11 @@ import { StyleSheet, Text, View } from "react-native";
 class PrayerList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { index: 0 };
+    this.state = { index: 1 };
   }
 
   render() {
-    if (this.props.index == 0) {
+    if (this.props.index == 1) {
       return (
         <Text style={styles.lyrics}>
           Trầm hương đốt, xông ngát mười phương, {"\n"}
@@ -31,7 +31,7 @@ class PrayerList extends React.Component {
           Nam mô Bổn Sư Thích Ca Mâu Ni Phật. (C) {"\n"}
         </Text>
       );
-    } else if (this.props.index == 1) {
+    } else if (this.props.index == 2) {
       return (
         <View style={styles.container}>
           <Text style={styles.lyricTitle}>Cúng Hương {"\n"}</Text>
@@ -101,7 +101,7 @@ class PrayerList extends React.Component {
           </Text>
         </View>
       );
-    } else if (this.props.index == 2) {
+    } else if (this.props.index == 3) {
       return (
         <Text style={styles.lyrics}>
           Đệ tử kính lạy Đức Phật Thích Ca, {"\n"}
@@ -136,7 +136,7 @@ class PrayerList extends React.Component {
           Đồng thành Phật đạo. (C) {"\n"}
         </Text>
       );
-    } else if (this.props.index == 3) {
+    } else if (this.props.index == 4) {
       return (
         <Text style={styles.lyrics}>
           Nam Mô Bổn Sư Thích Ca Mâu Ni Phật (3x-C) {"\n"}
@@ -155,7 +155,7 @@ class PrayerList extends React.Component {
           {"\n"}
         </Text>
       );
-    } else if (this.props.index == 4) {
+    } else if (this.props.index == 5) {
       return (
         <Text style={styles.lyrics}>
           Chúng sanh vô số lượng, thệ nguyện đều độ khắp {"\n"}
@@ -164,7 +164,7 @@ class PrayerList extends React.Component {
           Phật Đạo không gì hơn, thệ nguyện được viên thành. (C){"\n"}
         </Text>
       );
-    } else if (this.props.index == 5) {
+    } else if (this.props.index == 6) {
       return (
         <Text style={styles.lyrics}>
           Tự quy y Phật, xin nguyện chúng sanh, {"\n"}
@@ -178,7 +178,7 @@ class PrayerList extends React.Component {
           {"\n"}
         </Text>
       );
-    } else if (this.props.index == 6) {
+    } else if (this.props.index == 7) {
       return (
         <Text style={styles.lyrics}>
           Nguyện đem công đức này,{"\n"}

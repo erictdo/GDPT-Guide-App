@@ -13,6 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Header from "../../components/Header";
 import GlobalStyles from "../../components/GlobalStyles";
 import MenuButton from "../../components/MenuButton";
+import { NextButton } from "../../components/NextButton";
 import PrayerList from "./PrayerList";
 
 export default class PrayerScreen extends React.Component {
@@ -38,10 +39,49 @@ export default class PrayerScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      prayerSelection: "1| Trầm Hương Đốt",
-      prayerIndex: 0
+      prayerSelection: "1|   Trầm Hương Đốt",
+      prayerIndex: 1
     };
   }
+
+  _nextPrayerTitle = () => {
+    this.setState({ prayerIndex: this.state.prayerIndex + 1 });
+
+    switch (this.state.prayerIndex) {
+      case 1:
+        this.setState({ prayerSelection: "1|   Trầm Hương Đốt" });
+        break;
+      case 2:
+        this.setState({ prayerSelection: "2|   Chủ Lễ" });
+        break;
+      case 3:
+        this.setState({ prayerSelection: "3|   Bài Sám Hối" });
+        break;
+      case 4:
+        this.setState({ prayerSelection: "4|   Niệm Phật và Bồ Tát" });
+        break;
+      case 5:
+        this.setState({ prayerSelection: "5|   Bốn Lời Nguyện Rộng Lớn" });
+        break;
+      case 6:
+        this.setState({ prayerSelection: "6|   Tam Tự Quy Y" });
+        break;
+      case 7:
+        this.setState({ prayerSelection: "7|   Hồi Hướng" });
+        break;
+      default:
+        this.setState({
+          prayerIndex: 1,
+          prayerSelection: "1|   Trầm Hương Đốt"
+        });
+    }
+    console.log(
+      "PrayerIndex: " +
+        this.state.prayerIndex +
+        " PrayerSelection: " +
+        this.state.prayerSelection
+    );
+  };
 
   render() {
     return (
@@ -76,6 +116,7 @@ export default class PrayerScreen extends React.Component {
                 <PrayerList index={this.state.prayerIndex} />
               </View>
             </ScrollView>
+            <NextButton onPress={this._nextPrayerTitle} />
           </View>
         </View>
       </SafeAreaView>
