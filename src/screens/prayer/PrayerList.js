@@ -187,6 +187,35 @@ class PrayerList extends React.Component {
           Đều trọn thành Phật đạo. (C){"\n"}
         </Text>
       );
+    } else if (this.props.index == 7) {
+      return (
+        <Text style={styles.lyrics}>
+          Lạy Phật con xin Sám hối. {"\n"}
+          Con đã quay về Đài sen{"\n"}
+          Lạy Phật con xin Sám hối. {"\n"}
+          Con đã thấm nhuần Ánh Dương{"\n"}
+          {"\n"}
+          Con đã thấy kiếp chúng sinh. {"\n"}
+          Khổ đau trong muôn lỗi lầm{"\n"}
+          Hoà với nước mắt u-sầu. {"\n"}
+          Trọn đời sống kiếp thương đau{"\n"}
+          {"\n"}
+          Cầu xin cho con Ánh sáng. {"\n"}
+          Ngời soi nơi nơi mê mờ{"\n"}
+          Trần gian vui trong Ánh Đạo. {"\n"}
+          Cho đời vơi bớt sầu đau{"\n"}
+          {"\n"}
+          Cầu xin cho con Ánh Sáng{"\n"}
+          Ngời soi nơi nơi mê mờ{"\n"}
+          Trần gian vui trong Ánh Đạo. {"\n"}
+          Cho đời người bớt sầu đau{"\n"}
+          {"\n"}
+          Lạy Phật con xin Sám hối{"\n"}
+          Con đã quay về Đài sen. {"\n"}
+          Lạy Phật con xin Sám hối.{"\n"}
+          Con đã thấm nhuần Ánh Dương {"\n"}
+        </Text>
+      );
     }
   }
 }

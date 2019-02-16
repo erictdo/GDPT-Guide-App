@@ -69,6 +69,7 @@ export default class PrayerScreen extends React.Component {
                 <Picker.Item label="5|   Bốn Lời Nguyện Rộng Lớn" value="5" />
                 <Picker.Item label="6|   Tam Tự Quy Y" value="6" />
                 <Picker.Item label="7|   Hồi Hướng" value="7" />
+                <Picker.Item label="8|   Lạy Phật Xin Sám Hối" value="8" />
               </Picker>
             </View>
             <ScrollView styles={styles.scrollStyles}>
