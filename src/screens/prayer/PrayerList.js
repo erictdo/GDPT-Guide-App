@@ -5,7 +5,24 @@ import { StyleSheet, Text, View } from "react-native";
 class PrayerList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { index: 0 };
+
+    var today = new Date(),
+      date = today;
+    this.state = {
+      index: 0,
+      day: "",
+      month: "",
+      year: ""
+    };
+  }
+
+  componentDidMount() {
+    // Get Date
+    this.setState({
+      day: new Date().getDate(), //Current Day
+      month: new Date().getMonth() + 1, //Current Month
+      year: new Date().getFullYear() //Current Year
+    });
   }
 
   render() {
@@ -37,50 +54,51 @@ class PrayerList extends React.Component {
           <Text style={styles.lyricTitle}>Cúng Hương {"\n"}</Text>
           <Text style={styles.lyrics}>
             Nguyện đem lòng thành kinh {"\n"}
-            Gửi theo đám mây hương {"\n"}
-            Phưởng phất khắp mười phương {"\n"}
-            Cúng dường ngôi tam bảo (C) {"\n"}
-            Thề trọn đời giữ đạo {"\n"}
+            Gởi theo đám mây hương {"\n"}
+            Phảng phất khắp mười phương {"\n"}
+            Cúng dường ngôi Tam Bảo (C) {"\n"}
+            Thề trọn đời giữ Đạo {"\n"}
             Theo tự tánh làm lành {"\n"}
-            Cùng pháp giới chúng sanh {"\n"}
-            Cầu phật từ gia hộ {"\n"}
-            Tâm Bồ Đề kiên cố {"\n"}
+            Cùng Pháp Giới chúng sanh {"\n"}
+            Cầu Phật từ gia hộ {"\n"}
+            Tâm Bồ-đề kiên cố {"\n"}
+            Chí tu học vững bền {"\n"}
             Xa bể khổ nguồn mê {"\n"}
             Chóng quay về bờ giác (C) {"\n"}
           </Text>
           <Text style={styles.lyricTitle}>Tán Phật {"\n"}</Text>
           <Text style={styles.lyrics}>
-            Đấng pháp vương vô thượng {"\n"}
+            Đấng Pháp Vương Vô Thượng {"\n"}
             Ba cõi chẳng ai bằng {"\n"}
             Thầy dạy khắp trời người {"\n"}
             Cha lành chung bốn loại {"\n"}
-            Quy y trọn một niệm {"\n"}
-            Đứt sạch nghiệp ba kỳ {"\n"}
+            Quy y tròn một niệm {"\n"}
+            Dứt sạch nghiệp ba-kỳ {"\n"}
             Xưng dương cùng tán thán {"\n"}
             Ức kiếp không cùng tận (C) {"\n"}
           </Text>
           <Text style={styles.lyricTitle}>Kỳ Nguyện {"\n"}</Text>
           <Text style={styles.lyrics}>
-            Hôm nay là ngày __ tháng __ năm ___ toàn thể Huynh Trương và đoàn
-            sinh Gia Đình Phật Tử (Chùa) chúng con đồng thành thật để chúc, bổn
-            sư Thích Ca Mau Ni Phật, cùng thể thảy Chư Phật bồ tác trong mười
-            phương, từ bi gia hộ cho đệ chúng con thân tâm thường được an lạc,
-            tậc bệnh tiêu trừ, xa lìa khổ ác, cung hết thảy chúng sanh chư đạo
-            bồ đề trang nghiêm một thời đồng chứng Vô Thương Chánh Đẳng Chánh
-            Giác. (C)
+            Hôm nay là ngày {this.state.day} tháng {this.state.month} năm{" "}
+            {this.state.year} toàn thể Huynh Trương và đoàn sinh Gia Đình Phật
+            Tử (Chùa) chúng con đồng thành thật để chúc, bổn sư Thích Ca Mau Ni
+            Phật, cùng thể thảy Chư Phật bồ tác trong mười phương, từ bi gia hộ
+            cho đệ chúng con thân tâm thường được an lạc, tậc bệnh tiêu trừ, xa
+            lìa khổ ác, cung hết thảy chúng sanh chư đạo bồ đề trang nghiêm một
+            thời đồng chứng Vô Thương Chánh Đẳng Chánh Giác. (C)
+          </Text>
+          <Text style={styles.note}>
+            Đứng dậy cắm hương lên lư {"\n"}
+            Vị chủ lễ chấp tay đứng thẳng và niệm
           </Text>
           <Text style={styles.lyricTitle}>Quán Tưởng {"\n"}</Text>
           <Text style={styles.lyrics}>
             Phật, chúng sanh: tánh thường rỗng lặng. {"\n"}
             Ðạo cảm thông không thể nghĩ bàn. {"\n"}
-            Lưới đế châu ví tựa đạo tràng, {"\n"}
-            Mười phương Phật bảo, hào quang sáng ngời, {"\n"}
+            Lưới đế châu ví Đạo Tràng, {"\n"}
+            Mười phương Phật Bảo hào quang sáng ngời, {"\n"}
             Trước bảo tọa thân con ảnh hiện, {"\n"}
             Cúi đầu xin thệ nguyện quy y. (C) {"\n"}
-          </Text>
-          <Text style={styles.note}>
-            Đứng dậy cắm hương lên lư {"\n"}
-            Vị chủ lễ chấp tay đứng thẳng và niệm
           </Text>
           <Text style={styles.lyricTitle}>Đảnh Lể {"\n"}</Text>
           <Text style={styles.lyrics}>
