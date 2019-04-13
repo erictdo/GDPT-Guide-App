@@ -1,34 +1,11 @@
 import React from "react";
-import {
-  StatusBar,
-  SafeAreaView,
-  View,
-  StyleSheet,
-  Text,
-  ImageBackground
-} from "react-native";
+import { SafeAreaView, View, StyleSheet, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Header from "../../components/Header";
 import GlobalStyles from "../../components/GlobalStyles";
 import MenuButton from "../../components/MenuButton";
 
-export default class ToolsScreen extends React.Component {
-  static navigationOptions = {
-    drawerLabel: "Tools ",
-    drawerIcon: ({ tintColor }) => (
-      <Ionicons
-        name="md-hammer"
-        style={{
-          fontSize: 24,
-          color: tintColor,
-          textShadowOffset: {
-            width: 1,
-            height: 1
-          }
-        }}
-      />
-    )
-  };
+export default class ToolMenuScreen extends React.Component {
   render() {
     return (
       <SafeAreaView>

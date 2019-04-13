@@ -16,7 +16,9 @@ import {
 import HomeScreen from "../screens/home/HomeScreen";
 import PrayerScreen from "../screens/prayer/PrayerScreen";
 import AboutScreen from "../screens/about/AboutScreen";
-import ToolsScreen from "../screens/tools/ToolsScreen";
+import ToolNavigator from "./ToolNavigator";
+
+import { Ionicons } from "@expo/vector-icons";
 
 const CustomDrawerComponent = props => (
   <SafeAreaView
@@ -49,10 +51,82 @@ const CustomDrawerComponent = props => (
 
 const DrawerNavigator = createDrawerNavigator(
   {
-    Home: HomeScreen,
-    Prayer: PrayerScreen,
-    Tools: ToolsScreen,
-    About: AboutScreen
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        drawerLabel: "Home ",
+        drawerIcon: ({ tintColor }) => (
+          <Ionicons
+            name="md-home"
+            style={{
+              fontSize: 24,
+              color: tintColor,
+              textShadowOffset: {
+                width: 1,
+                height: 1
+              }
+            }}
+          />
+        )
+      }
+    },
+    Prayer: {
+      screen: PrayerScreen,
+      navigationOptions: {
+        drawerLabel: "Prayers ",
+        drawerIcon: ({ tintColor }) => (
+          <Ionicons
+            name="md-hand"
+            style={{
+              fontSize: 24,
+              color: tintColor,
+              textShadowOffset: {
+                width: 1,
+                height: 1
+              }
+            }}
+          />
+        )
+      }
+    },
+    Tools: {
+      screen: ToolNavigator,
+      navigationOptions: {
+        drawerLabel: "Tools ",
+        drawerIcon: ({ tintColor }) => (
+          <Ionicons
+            name="md-hammer"
+            style={{
+              fontSize: 24,
+              color: tintColor,
+              textShadowOffset: {
+                width: 1,
+                height: 1
+              }
+            }}
+          />
+        )
+      }
+    },
+    About: {
+      screen: AboutScreen,
+      navigationOptions: {
+        drawerLabel: "About ",
+        drawerIcon: ({ tintColor }) => (
+          <Ionicons
+            name="md-information-circle-outline"
+            style={{
+              fontSize: 24,
+              color: tintColor,
+              textShadowOffset: {
+                width: 1,
+                height: 1
+              }
+            }}
+          />
+        )
+      }
+    }
   },
   {
     initialRouteName: "Home",
