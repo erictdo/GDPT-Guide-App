@@ -1,27 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import Header from "../../components/Header";
 import GlobalStyles from "../../components/GlobalStyles";
 import MenuButton from "../../components/MenuButton";
 
 export default class AboutScreen extends React.Component {
-  static navigationOptions = {
-    drawerLabel: "About ",
-    drawerIcon: ({ tintColor }) => (
-      <Ionicons
-        name="md-information-circle-outline"
-        style={{
-          fontSize: 24,
-          color: tintColor,
-          textShadowOffset: {
-            width: 1,
-            height: 1
-          }
-        }}
-      />
-    )
-  };
   render() {
     return (
       <SafeAreaView>

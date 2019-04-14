@@ -7,27 +7,9 @@ import {
   Text,
   ScrollView
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import MenuButton from "../../components/MenuButton";
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    drawerLabel: "Home ",
-    drawerIcon: ({ tintColor }) => (
-      <Ionicons
-        name="md-home"
-        style={{
-          fontSize: 24,
-          color: tintColor,
-          textShadowOffset: {
-            width: 1,
-            height: 1
-          }
-        }}
-      />
-    )
-  };
-
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>

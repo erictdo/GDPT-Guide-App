@@ -16,22 +16,6 @@ import MenuButton from "../../components/MenuButton";
 import PrayerList from "./PrayerList";
 
 export default class PrayerScreen extends React.Component {
-  static navigationOptions = {
-    drawerLabel: "Prayers ",
-    drawerIcon: ({ tintColor }) => (
-      <Ionicons
-        name="md-hand"
-        style={{
-          fontSize: 24,
-          color: tintColor,
-          textShadowOffset: {
-            width: 1,
-            height: 1
-          }
-        }}
-      />
-    )
-  };
   static defaultProps = {
     headerName: "Prayers"
   };
